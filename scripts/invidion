@@ -1,0 +1,8 @@
+#!/bin/bash
+URL=$1
+if [[ $URL =~ invidio ]]
+then
+	echo $URL >> ~/invidiosubs.m3u8
+else
+	exec $BROWSER $URL
+fi
