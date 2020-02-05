@@ -19,6 +19,7 @@ ln -sf /storage/Images $HOME/
 git clone https://aur.archlinux.org/yay.git ~/.builds/yay
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 git clone https://github.com/horst3180/arc-icon-theme --depth 1 ~/.builds/arc-icon-theme
+git clone https://github.com/alchemistswater/aw_dmenu ~/.builds/aw_dmenu
 
 cd ~/.builds/yay
 makepkg -si
@@ -27,8 +28,12 @@ cd ~/.builds/arc-icon-theme
 ./autogen.sh --prefix=/usr
 sudo make install
 
+cd ~/.builds/aw_dmenu
+make
+sudo make install
+
 yay -S  picom pfetch-git moka-icon-theme lxappearance sox imagemagick i3lock \
-	profile-sync-daemon ttf-font-awesome lemonbar-xft-git 
+	profile-sync-daemon ttf-font-awesome lemonbar-xft-git st-luke-git
 
 cd ~
 
